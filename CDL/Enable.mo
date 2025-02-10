@@ -1,12 +1,12 @@
-within TestPackageDesign;
+within TestDesignDocuments.CDL;
 block Enable
   "Plant enable"
-  parameter TestPackageDesign.Types.Application typ
+  parameter TestDesignDocuments.Types.Application typ
     "Application type";
   parameter Real TOutLck(
     final min=100,
     final unit="K",
-    displayUnit="degC")=if typ == TestPackageDesign.Types.Application.HeatingOnly
+    displayUnit="degC")=if typ == TestDesignDocuments.Types.Application.HeatingOnly
     then 18 + 273.15 else 15 + 273.15
     "Outdoor air lockout temperature";
   parameter Integer nReqIgn(
@@ -24,9 +24,7 @@ block Enable
     __cdl(
       Documentation(
         include=true,
-        section="1.1.1")),
-    Documentation(
-      info="<html>
+        info="<html>
 <p>
 The plant is enabled when it has been disabled for at least the duration <code>dtRun</code> and:
 </p>
@@ -34,13 +32,13 @@ The plant is enabled when it has been disabled for at least the duration <code>d
 <li>
 Number of plant requests &gt; number of ignored requests <code>nReqIgn</code>, and
 </li>
-<template data-cdl-visible='typ==TestPackageDesign.Types.Application.CoolingOnly'>
+<template data-cdl-visible='typ==TestDesignDocuments.Types.Application.CoolingOnly'>
 <li>
 Outdoor air temperature &gt; outdoor air lockout
 temperature <code>TOutLck</code>, and
 </template>
 </li>
-<template data-cdl-visible='typ==TestPackageDesign.Types.Application.HeatingOnly'>
+<template data-cdl-visible='typ==TestDesignDocuments.Types.Application.HeatingOnly'>
 <li>
 Outdoor air temperature &lt; outdoor air lockout
 temperature <code>TOutLck</code>, and
@@ -59,13 +57,13 @@ The plant is disabled when it has been enabled for at least the duration
 Number of plant requests &le; number of ignored requests <code>nReqIgn</code>
 for at least the duration <code>dtReq</code>, or
 </li>
-<template data-cdl-visible='typ==TestPackageDesign.Types.Application.CoolingOnly'>
+<template data-cdl-visible='typ==TestDesignDocuments.Types.Application.CoolingOnly'>
 <li>
 Outdoor air temperature &lt; outdoor air lockout
 temperature <code>TOutLck</code> minus hysteresis <code>dTOutLck</code>, or
 </li>
 </template>
-<template data-cdl-visible='typ==TestPackageDesign.Types.Application.HeatingOnly'>
+<template data-cdl-visible='typ==TestDesignDocuments.Types.Application.HeatingOnly'>
 <li>
 Outdoor air temperature &gt; outdoor air lockout
 temperature <code>TOutLck</code> plus hysteresis <code>dTOutLck</code>, or
@@ -75,5 +73,5 @@ temperature <code>TOutLck</code> plus hysteresis <code>dTOutLck</code>, or
 The plant enable schedule is inactive.
 </li>
 </ul>
-</html>"));
+</html>")));
 end Enable;

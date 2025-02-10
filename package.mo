@@ -1,2 +1,2 @@
 within;
-package TestPackageDesign end TestPackageDesign;
+package TestDesignDocuments end TestDesignDocuments;

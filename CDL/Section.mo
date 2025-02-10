@@ -1,4 +1,4 @@
-within TestPackageDesign;
+within TestDesignDocuments.CDL;
 block Section
   "Block used to organize the documentation of control sequences"
   annotation (
