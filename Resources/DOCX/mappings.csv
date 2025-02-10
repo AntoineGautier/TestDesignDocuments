@@ -1,0 +1,8 @@
+,Short ID,Mutually Exclusive? (Y/N),Modelica Parameter,Modelica Path
+Application Type,TYP,Y,TestPackageDesign.PlantController.typ,TestPackageDesign.PlantController.typ
+Cooling Only,COOL_ONLY,,,TestPackageDesign.Types.Application.CoolingOnly
+Heating Only,HEAT_ONLY,,,TestPackageDesign.Types.Application.HeatingOnly
+Heating and Cooling,HEAT_COOL,,,TestPackageDesign.Types.Application.HeatingAndCooling
+Unit of Measurement,UNITS,Y,Buildings.Templates.Data.AllSystems.sysUni,Buildings.Templates.Types.Units
+1 = SI,SI,,,Buildings.Templates.Types.Units.SI
+2 = IP,IP,,,Buildings.Templates.Types.Units.IP

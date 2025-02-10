@@ -1,0 +1,84 @@
+<html><head><title>Sequence of Operation</title></head><body><h1><a name="1two-pipe-air-to-water-heat-pu"></a><!--[if !supportLists]--><span style="mso-list:Ignore">1.&nbsp;</span><!--[endif]-->Two-pipe air-to-water heat pump plant</h1>
+<h2><a name="1.1cooling-plant"></a><!--[if !supportLists]--><span style="mso-list:Ignore">1.1.&nbsp;</span><!--[endif]-->Cooling plant</h2>
+<h3><a name="1.1.1cooling-plant-enable"></a><!--[if !supportLists]--><span style="mso-list:Ignore">1.1.1.&nbsp;</span><!--[endif]-->Cooling plant enable</h3>
+<p>
+The plant is enabled when it has been disabled for at least the duration <code>dtRun</code>&nbsp;(900&nbsp;s, adjustable) and:
+</p>
+<ul>
+<li>
+Number of plant requests &gt; number of ignored requests <code>nReqIgn</code>&nbsp;(0, adjustable), and
+</li>
+
+<li>
+Outdoor air temperature &gt; outdoor air lockout
+temperature <code>TOutLck</code>&nbsp;(15&nbsp;°C, adjustable), and
+</li>
+
+
+
+<li>
+The enable schedule is active.
+</li>
+</ul>
+<p>
+The plant is disabled when it has been enabled for at least the duration
+<code>dtRun</code>&nbsp;(900&nbsp;s, adjustable) and:
+</p>
+<ul>
+<li>
+Number of plant requests ≤ number of ignored requests <code>nReqIgn</code>&nbsp;(0, adjustable)
+for at least the duration <code>dtReq</code>&nbsp;(180&nbsp;s, adjustable), or
+</li>
+
+<li>
+Outdoor air temperature &lt; outdoor air lockout
+temperature <code>TOutLck</code>&nbsp;(15&nbsp;°C, adjustable) minus hysteresis <code>dTOutLck</code>, or
+</li>
+
+
+<li>
+The plant enable schedule is inactive.
+</li>
+</ul>
+<h2><a name="1.2heating-plant"></a><!--[if !supportLists]--><span style="mso-list:Ignore">1.2.&nbsp;</span><!--[endif]-->Heating plant</h2>
+<h3><a name="1.2.1heating-plant-enable"></a><!--[if !supportLists]--><span style="mso-list:Ignore">1.2.1.&nbsp;</span><!--[endif]-->Heating plant enable</h3>
+<p>
+The plant is enabled when it has been disabled for at least the duration <code>dtRun</code>&nbsp;(900&nbsp;s, adjustable) and:
+</p>
+<ul>
+<li>
+Number of plant requests &gt; number of ignored requests <code>nReqIgn</code>&nbsp;(0, adjustable), and
+</li>
+
+
+
+<li>
+Outdoor air temperature &lt; outdoor air lockout
+temperature <code>TOutLck</code>&nbsp;(18&nbsp;°C, adjustable), and
+</li>
+
+<li>
+The enable schedule is active.
+</li>
+</ul>
+<p>
+The plant is disabled when it has been enabled for at least the duration
+<code>dtRun</code>&nbsp;(900&nbsp;s, adjustable) and:
+</p>
+<ul>
+<li>
+Number of plant requests ≤ number of ignored requests <code>nReqIgn</code>&nbsp;(0, adjustable)
+for at least the duration <code>dtReq</code>&nbsp;(180&nbsp;s, adjustable), or
+</li>
+
+
+<li>
+Outdoor air temperature &gt; outdoor air lockout
+temperature <code>TOutLck</code>&nbsp;(18&nbsp;°C, adjustable) plus hysteresis <code>dTOutLck</code>, or
+</li>
+
+<li>
+The plant enable schedule is inactive.
+</li>
+</ul>
+</body></html>
