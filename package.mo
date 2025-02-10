@@ -1,3 +1,2 @@
-within ;
-package TestPackageDesign
-end TestPackageDesign;
+within;
+package TestPackageDesign end TestPackageDesign;

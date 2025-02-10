@@ -1,14 +1,13 @@
 within TestPackageDesign;
 block Enable
   "Plant enable"
-  parameter Boolean have_chw
-    "Set to true if the plant provides CHW";
-  parameter Boolean have_hhw
-    "Set to true if the plant provides HHW";
+  parameter TestPackageDesign.Types.Application typ
+    "Application type";
   parameter Real TOutLck(
     final min=100,
     final unit="K",
-    displayUnit="degC")=if have_hhw then 18 + 273.15 else 15 + 273.15
+    displayUnit="degC")=if typ == TestPackageDesign.Types.Application.HeatingOnly
+    then 18 + 273.15 else 15 + 273.15
     "Outdoor air lockout temperature";
   parameter Integer nReqIgn(
     min=0)=0
@@ -35,13 +34,13 @@ The plant is enabled when it has been disabled for at least the duration <code>d
 <li>
 Number of plant requests &gt; number of ignored requests <code>nReqIgn</code>, and
 </li>
-<template data-cdl-visible=have_chw>
+<template data-cdl-visible='typ==TestPackageDesign.Types.Application.CoolingOnly'>
 <li>
 Outdoor air temperature &gt; outdoor air lockout
 temperature <code>TOutLck</code>, and
 </template>
 </li>
-<template data-cdl-visible=have_hhw>
+<template data-cdl-visible='typ==TestPackageDesign.Types.Application.HeatingOnly'>
 <li>
 Outdoor air temperature &lt; outdoor air lockout
 temperature <code>TOutLck</code>, and
@@ -60,13 +59,13 @@ The plant is disabled when it has been enabled for at least the duration
 Number of plant requests &le; number of ignored requests <code>nReqIgn</code>
 for at least the duration <code>dtReq</code>, or
 </li>
-<template data-cdl-visible=have_chw>
+<template data-cdl-visible='typ==TestPackageDesign.Types.Application.CoolingOnly'>
 <li>
 Outdoor air temperature &lt; outdoor air lockout
 temperature <code>TOutLck</code> minus hysteresis <code>dTOutLck</code>, or
 </li>
 </template>
-<template data-cdl-visible=have_hhw>
+<template data-cdl-visible='typ==TestPackageDesign.Types.Application.HeatingOnly'>
 <li>
 Outdoor air temperature &gt; outdoor air lockout
 temperature <code>TOutLck</code> plus hysteresis <code>dTOutLck</code>, or
