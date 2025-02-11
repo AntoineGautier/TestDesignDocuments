@@ -134,4 +134,8 @@ Similarly to the Docx-based workflow for the sequence documentation,
 the control schematic could be externalized in a single "master" file, and the visibility of the components could be toggled based
 on object attributes, mapped to the Modelica parameters.
 
-The format of the external file needs to be further specified, taking into account the ability to store extended entity data.
+### To Be Further Specified
+
+- Direct graphical feedback at UI runtime or simple export capability
+- Output format: SVG, DXF, other
+- In case of an external "master" file: Input format SVG, DXF, other — taking into account the ability to store extended entity data
