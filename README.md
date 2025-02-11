@@ -87,7 +87,7 @@ Note that
 - the parameter values are retrieved from the Modelica classes,
 - the parameter units are converted based on the Modelica attributes `unit` and `displayUnit`.
 
-#### Docx-based Workflow
+#### Docx-Based Workflow
 
 Contrary to the CDL-based workflow, the supplementary documentation data is stored in two separate files:
 
