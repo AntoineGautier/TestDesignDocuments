@@ -36,14 +36,14 @@ Number of plant requests &gt; number of ignored requests <code>nReqIgn</code>, a
 <li>
 Outdoor air temperature &gt; outdoor air lockout
 temperature <code>TOutLck</code>, and
-</template>
 </li>
+</template>
 <template data-cdl-visible='typ==TestDesignDocuments.Types.Application.HeatingOnly'>
 <li>
 Outdoor air temperature &lt; outdoor air lockout
 temperature <code>TOutLck</code>, and
-</template>
 </li>
+</template>
 <li>
 The enable schedule is active.
 </li>

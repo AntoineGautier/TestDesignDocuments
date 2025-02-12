@@ -55,7 +55,7 @@ Let's see how each workflow handles the documentation of the enable logic.
 The sequence of operation for the enable logic is inluded in HTML format in the `__cdl(...)` annotation in the `Enable` block:
 see https://github.com/AntoineGautier/TestDesignDocuments/blob/master/CDL/Enable.mo#L27-L76
 
-⚠️ This means that the whole sequence of operation is not included in one place, but rather distributed across the Modelica classes.
+⚠️ The complete sequence of operation is not included in one place, but rather distributed across the Modelica classes.
 
 The entire section "Cooling plant enable" is included in the documentation based on the conditional clause
 `if typ <> TestDesignDocuments.Types.Application.HeatingOnly`.
@@ -69,6 +69,7 @@ by adjusting the value of the `typ` parameter.
 <li>
 Outdoor air temperature &lt; outdoor air lockout
 temperature <code>TOutLck</code>, and
+</li>
 </template>
 ```
 
@@ -84,7 +85,7 @@ node ./modelica-json/app.js -f TestDesignDocuments/CDL/PlantController.mo -o doc
 ```
 
 Note that
-- the parameter values are retrieved from the Modelica classes,
+- the parameter values (such as the outdoor air lockout temperature) are retrieved from the Modelica classes,
 - the parameter units are converted based on the Modelica attributes `unit` and `displayUnit`.
 
 #### Docx-based Workflow
